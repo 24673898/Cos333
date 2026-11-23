@@ -40,7 +40,9 @@ export function Layout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false)
   const [progress] = useProgress()
   const loc = useLocation()
-  useEffect(() => window.scrollTo(0, 0), [loc.pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [loc.pathname])
 
   const sidebar = (
     <div className="flex h-full flex-col gap-5 overflow-y-auto p-4">
